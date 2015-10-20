@@ -165,7 +165,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JWw-VN-Hag" id="5IH-Q9-Kz8">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucu-jx-clM">
@@ -234,22 +234,26 @@
         <!--Statistics-->
         <scene sceneID="3ke-qo-MCg">
             <objects>
-                <viewController id="ZGv-6q-aqX" sceneMemberID="viewController">
+                <viewController id="ZGv-6q-aqX" customClass="StatisticsViewController" customModule="MyTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xVH-Jj-Ui1"/>
-                        <viewControllerLayoutGuide type="bottom" id="ack-b4-9jy"/>
+                        <viewControllerLayoutGuide type="top" id="WGg-Zt-IW7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aiu-5c-9mz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GDm-oi-j2U">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="GXi-7Y-7jd" customClass="HorizontalBarChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="Bar Chart-30.png" selectedImage="Bar Chart Filled-30.png" id="59Y-9a-LFe"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="tkw-BR-Wo2"/>
+                    <connections>
+                        <outlet property="barChartView" destination="GXi-7Y-7jd" id="R4e-DR-2I8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h07-5a-M4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338" y="203"/>
+            <point key="canvasLocation" x="364" y="203"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JbA-RQ-tln">
@@ -259,11 +263,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.62352941179999999" green="0.43921568630000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Bzx-mN-ioR" kind="relationship" relationship="viewControllers" id="J44-sK-BVm"/>
-                        <segue destination="ZGv-6q-aqX" kind="relationship" relationship="viewControllers" id="lZa-Ss-1DG"/>
+                        <segue destination="FGR-0h-WKY" kind="relationship" relationship="viewControllers" id="lZa-Ss-1DG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1E-Gy-fzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,6 +322,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5a1-6q-rbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156" y="-931"/>
+        </scene>
+        <!--Statistics-->
+        <scene sceneID="SXt-Mf-GtP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGR-0h-WKY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statistics" image="Bar Chart-30.png" selectedImage="Bar Chart Filled-30.png" id="59Y-9a-LFe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yne-6l-Cwt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.62352941179999999" green="0.43921568630000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZGv-6q-aqX" kind="relationship" relationship="rootViewController" id="vqb-Sg-fZ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CM1-hG-TwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="203"/>
         </scene>
     </scenes>
     <resources>

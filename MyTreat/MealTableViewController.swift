@@ -49,7 +49,7 @@ class MealTableViewController: UITableViewController {
             let mealsManagedObject = results as! [NSManagedObject]
             
             for meal in mealsManagedObject {
-                let tempMeal = Meal(restaurantName: (meal.valueForKey("restaurant") as? String)!, whoPaid: (meal.valueForKey("whoPaid") as? String)!, amount: (meal.valueForKey("amount") as? Float)!, date: (meal.valueForKey("date") as? NSDate)!)!
+                let tempMeal = Meal(restaurantName: (meal.valueForKey("restaurant") as? String)!, whoPaid: (meal.valueForKey("whoPaid") as? String)!, amount: (meal.valueForKey("amount") as? Double)!, date: (meal.valueForKey("date") as? NSDate)!)!
                 meals += [tempMeal]
             }
             

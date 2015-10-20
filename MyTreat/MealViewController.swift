@@ -154,7 +154,7 @@ class MealViewController: UIViewController, UITextFieldDelegate {
             let restaurantName = textFieldRestaurantName.text ?? ""
             let whoPaid = textFieldWhoPaid.text ?? ""
             let numberFormatter = NSNumberFormatter()
-            let amount = numberFormatter.numberFromString(textFieldAmount.text!)?.floatValue
+            let amount = numberFormatter.numberFromString(textFieldAmount.text!)?.doubleValue
             let date = datePicker.date
             
             meal = Meal(restaurantName: restaurantName, whoPaid: whoPaid, amount: amount!, date: date)

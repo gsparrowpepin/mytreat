@@ -14,10 +14,10 @@ class Meal {
     
     var restaurantName: String
     var whoPaid: String
-    var amount: Float
+    var amount: Double
     var date: NSDate
     
-    init?(restaurantName: String, whoPaid: String, amount: Float, date: NSDate) {
+    init?(restaurantName: String, whoPaid: String, amount: Double, date: NSDate) {
         self.restaurantName = restaurantName
         self.whoPaid = whoPaid
         self.amount = amount
