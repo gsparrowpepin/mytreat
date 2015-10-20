@@ -17,6 +17,7 @@ class StatisticsViewController: UIViewController {
     
     @IBOutlet var barChartView: HorizontalBarChartView!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var lineChartView: LineChartView!
     //@IBOutlet weak var barChartView: BarChartView!
     
     override func viewWillAppear(animated: Bool) {
@@ -28,6 +29,11 @@ class StatisticsViewController: UIViewController {
         
         var pieDataPoints:[String] = []
         var pieValues:[Double] = []
+        
+        let lineDataPoints:[String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        var lineValues:[Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        let calendar = NSCalendar.currentCalendar()
         
         for meal in meals{
             //Bar Graph Data Points
@@ -46,13 +52,19 @@ class StatisticsViewController: UIViewController {
                 pieDataPoints.append(meal.restaurantName)
                 pieValues.append(meal.amount)
             }
+            //Line Graphy Data Points
+            let components = calendar.components(.Month, fromDate: meal.date)
+            let month = components.month
+            lineValues[month] += meal.amount
         }
         //Graph
         setBarChart(barDataPoints, values: barValues, yValueLabel: "Total Paid")
         setPieChart(pieDataPoints, values: pieValues)
+        setLineChart(lineDataPoints, values: lineValues)
         
         barChartView.notifyDataSetChanged()
         pieChartView.notifyDataSetChanged()
+        lineChartView.notifyDataSetChanged()
     }
     
     override func viewDidLoad() {
@@ -89,6 +101,7 @@ class StatisticsViewController: UIViewController {
         chartDataSet.colors = ChartColorTemplates.joyful()
         barChartView.animate(xAxisDuration: 0, yAxisDuration: 1.0)
         barChartView.legend.enabled = false
+        
     }
     
     func setPieChart(dataPoints: [String], values: [Double]) {
@@ -100,13 +113,14 @@ class StatisticsViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Total Spent")
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         pieChartView.data = pieChartData
         
         
         pieChartDataSet.colors = ChartColorTemplates.joyful()
-        pieChartView.legend.position = .RightOfChartCenter
+        pieChartView.legend.position = .BelowChartLeft
+        pieChartView.legend.wordWrapEnabled = true
         pieChartView.legend.font = UIFont(name: "HelveticaNeue", size: 14)!
         
         pieChartView.holeAlpha = 0.0
@@ -114,6 +128,24 @@ class StatisticsViewController: UIViewController {
         pieChartView.drawSliceTextEnabled = false
         
         pieChartView.animate(xAxisDuration: 1.0)
+    }
+    
+    func setLineChart(dataPoints: [String], values: [Double]) {
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries)
+        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+        
+        lineChartDataSet.colors = ChartColorTemplates.joyful()
+        lineChartView.legend.enabled = false
+        lineChartView.scaleXEnabled = false
+        lineChartView.scaleYEnabled = false
     }
 
 //MARK: - Core Data

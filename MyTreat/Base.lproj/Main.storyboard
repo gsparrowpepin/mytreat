@@ -146,7 +146,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="Unw-gt-TEx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="-604"/>
+            <point key="canvasLocation" x="998" y="-604"/>
         </scene>
         <!--Meals-->
         <scene sceneID="IkR-Ts-Him">
@@ -240,65 +240,109 @@
                         <viewControllerLayoutGuide type="bottom" id="Aiu-5c-9mz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GXi-7Y-7jd">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="1087"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Paid:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxO-Eo-oxj">
-                                <rect key="frame" x="20" y="8" width="80" height="21"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBA-2Q-WVs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1087"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Paid:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxO-Eo-oxj">
+                                        <rect key="frame" x="20" y="13" width="80" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="ksu-mB-px4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-Hi-Vgf" customClass="HorizontalBarChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="42" width="560" height="275"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="275" id="jiH-QF-8A5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-Br-pIm" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="362" width="560" height="383"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="383" id="gjk-6C-x9T"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Spending:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNA-2c-Enh">
+                                        <rect key="frame" x="20" y="761" width="144" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhi-qh-ySu" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="789" width="560" height="288"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="288" id="mry-eb-5bk"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Spending:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpG-Wp-gWR">
+                                        <rect key="frame" x="20" y="333" width="165" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpG-Wp-gWR">
-                                <rect key="frame" x="20" y="194" width="96" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-Hi-Vgf" customClass="HorizontalBarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="36" width="560" height="150"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="T6J-lN-aSE"/>
+                                    <constraint firstItem="Onl-Br-pIm" firstAttribute="leading" secondItem="yBA-2Q-WVs" secondAttribute="leading" constant="20" id="3fa-O8-5Rw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hhi-qh-ySu" secondAttribute="trailing" constant="20" id="6NB-mV-dwk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Onl-Br-pIm" secondAttribute="trailing" constant="20" id="9Cl-7a-fkv"/>
+                                    <constraint firstItem="pSE-Hi-Vgf" firstAttribute="top" secondItem="AxO-Eo-oxj" secondAttribute="bottom" constant="8" id="DzU-U9-Wc2"/>
+                                    <constraint firstAttribute="trailing" secondItem="pSE-Hi-Vgf" secondAttribute="trailing" constant="20" id="GCh-SY-pKu"/>
+                                    <constraint firstItem="QNA-2c-Enh" firstAttribute="top" secondItem="Onl-Br-pIm" secondAttribute="bottom" constant="16" id="GcU-QQ-6hb"/>
+                                    <constraint firstItem="AxO-Eo-oxj" firstAttribute="leading" secondItem="yBA-2Q-WVs" secondAttribute="leading" constant="20" id="Ibi-ZD-5pp"/>
+                                    <constraint firstItem="zpG-Wp-gWR" firstAttribute="leading" secondItem="yBA-2Q-WVs" secondAttribute="leading" constant="20" id="TUL-fR-iGE"/>
+                                    <constraint firstItem="pSE-Hi-Vgf" firstAttribute="top" secondItem="yBA-2Q-WVs" secondAttribute="top" constant="42" id="b7M-5X-Haz"/>
+                                    <constraint firstItem="AxO-Eo-oxj" firstAttribute="top" secondItem="yBA-2Q-WVs" secondAttribute="top" constant="13" id="bLL-pW-0FE"/>
+                                    <constraint firstItem="Hhi-qh-ySu" firstAttribute="top" secondItem="QNA-2c-Enh" secondAttribute="bottom" constant="8" id="cvK-jK-AA2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hhi-qh-ySu" secondAttribute="bottom" constant="8" id="dXX-Fc-f9e"/>
+                                    <constraint firstItem="Onl-Br-pIm" firstAttribute="centerX" secondItem="yBA-2Q-WVs" secondAttribute="centerX" id="h9a-Rk-Ev0"/>
+                                    <constraint firstItem="QNA-2c-Enh" firstAttribute="leading" secondItem="yBA-2Q-WVs" secondAttribute="leading" constant="20" id="iSU-Dc-2Xo"/>
+                                    <constraint firstItem="pSE-Hi-Vgf" firstAttribute="leading" secondItem="yBA-2Q-WVs" secondAttribute="leading" constant="20" id="lwB-OC-qDd"/>
+                                    <constraint firstItem="zpG-Wp-gWR" firstAttribute="top" secondItem="pSE-Hi-Vgf" secondAttribute="bottom" constant="16" id="mlP-Ea-Xlk"/>
+                                    <constraint firstItem="Onl-Br-pIm" firstAttribute="top" secondItem="yBA-2Q-WVs" secondAttribute="top" constant="362" id="s6y-H7-xFI"/>
+                                    <constraint firstItem="Onl-Br-pIm" firstAttribute="top" secondItem="zpG-Wp-gWR" secondAttribute="bottom" constant="8" id="wQV-v6-MmM"/>
+                                    <constraint firstItem="Hhi-qh-ySu" firstAttribute="leading" secondItem="yBA-2Q-WVs" secondAttribute="leading" constant="20" id="xek-mz-B8N"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-Br-pIm" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="223" width="560" height="225"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="5ZL-lT-c9s"/>
-                                </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Onl-Br-pIm" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="Fax-G3-zag"/>
-                            <constraint firstItem="zpG-Wp-gWR" firstAttribute="top" secondItem="pSE-Hi-Vgf" secondAttribute="bottom" constant="8" id="MfY-vb-CJs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Onl-Br-pIm" secondAttribute="trailing" id="PRa-0K-fN1"/>
-                            <constraint firstItem="pSE-Hi-Vgf" firstAttribute="trailing" secondItem="GXi-7Y-7jd" secondAttribute="trailingMargin" id="QRe-uk-iJN"/>
-                            <constraint firstItem="zpG-Wp-gWR" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="bQV-jD-OCK"/>
-                            <constraint firstItem="AxO-Eo-oxj" firstAttribute="top" secondItem="WGg-Zt-IW7" secondAttribute="bottom" constant="8" id="cHF-cm-fBk"/>
-                            <constraint firstItem="pSE-Hi-Vgf" firstAttribute="top" secondItem="AxO-Eo-oxj" secondAttribute="bottom" constant="8" id="gwU-ty-Rl1"/>
-                            <constraint firstItem="AxO-Eo-oxj" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="hIj-5M-3ef"/>
-                            <constraint firstItem="pSE-Hi-Vgf" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="ueF-lH-BPY"/>
-                            <constraint firstItem="Onl-Br-pIm" firstAttribute="top" secondItem="zpG-Wp-gWR" secondAttribute="bottom" constant="8" id="xvW-sh-2WV"/>
+                            <constraint firstItem="yBA-2Q-WVs" firstAttribute="height" secondItem="GXi-7Y-7jd" secondAttribute="height" priority="250" id="8TK-YL-RPS"/>
+                            <constraint firstAttribute="trailing" secondItem="yBA-2Q-WVs" secondAttribute="trailing" id="FRk-uJ-dEx"/>
+                            <constraint firstItem="Aiu-5c-9mz" firstAttribute="top" secondItem="yBA-2Q-WVs" secondAttribute="bottom" id="Ucp-th-qX0"/>
+                            <constraint firstItem="yBA-2Q-WVs" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leading" id="UiR-re-Yts"/>
+                            <constraint firstItem="yBA-2Q-WVs" firstAttribute="top" secondItem="WGg-Zt-IW7" secondAttribute="bottom" id="VBQ-nd-Q1d"/>
+                            <constraint firstItem="yBA-2Q-WVs" firstAttribute="width" secondItem="GXi-7Y-7jd" secondAttribute="width" id="qHV-Ph-puH"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Statistics" id="tkw-BR-Wo2"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="barChartView" destination="pSE-Hi-Vgf" id="WmZ-FN-cX7"/>
+                        <outlet property="lineChartView" destination="Hhi-qh-ySu" id="IH0-y2-Xwf"/>
                         <outlet property="pieChartView" destination="Onl-Br-pIm" id="LPM-ek-DWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h07-5a-M4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="203"/>
+            <point key="canvasLocation" x="326" y="353"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JbA-RQ-tln">
