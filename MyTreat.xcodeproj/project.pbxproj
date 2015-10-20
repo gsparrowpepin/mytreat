@@ -163,9 +163,9 @@
 			children = (
 				C4769A301BD56E42006BB6DC /* Images */,
 				C46480311BCE9CB100F2AF33 /* AppDelegate.swift */,
-				C46480331BCE9CB100F2AF33 /* MealViewController.swift */,
 				C46480661BCEB0D300F2AF33 /* Meal.swift */,
 				C46480621BCEA57A00F2AF33 /* MealTableViewCell.swift */,
+				C46480331BCE9CB100F2AF33 /* MealViewController.swift */,
 				C46480641BCEA92800F2AF33 /* MealTableViewController.swift */,
 				C42216C11BD57DA50025027A /* StatisticsViewController.swift */,
 				C46480351BCE9CB100F2AF33 /* Main.storyboard */,

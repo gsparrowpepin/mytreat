@@ -14,10 +14,10 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-t2-6I1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restaurant Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-t2-6I1">
                                 <rect key="frame" x="20" y="72" width="141" height="17"/>
                                 <animations/>
                                 <constraints>
@@ -27,7 +27,7 @@
                                 <color key="textColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBq-dI-Y5E">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBq-dI-Y5E">
                                 <rect key="frame" x="20" y="97" width="559" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -36,7 +36,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter who paid" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42s-ad-RUW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter who paid" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42s-ad-RUW">
                                 <rect key="frame" x="150" y="160" width="430" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -45,7 +45,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-Av-ndp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-Av-ndp">
                                 <rect key="frame" x="20" y="135" width="69" height="17"/>
                                 <animations/>
                                 <constraints>
@@ -55,7 +55,7 @@
                                 <color key="textColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ku-ou-9II">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ku-ou-9II">
                                 <rect key="frame" x="20" y="160" width="122" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -65,14 +65,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="216" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-ty-8Nt">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="216" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-ty-8Nt">
                                 <rect key="frame" x="20" y="223" width="560" height="216"/>
                                 <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="466529004.88404799">
                                     <!--2015-10-14 15:23:24 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiB-UZ-ejH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiB-UZ-ejH">
                                 <rect key="frame" x="20" y="198" width="43" height="17"/>
                                 <animations/>
                                 <constraints>
@@ -83,7 +83,7 @@
                                 <color key="textColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who Paid:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82W-P4-Ixe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Who Paid:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82W-P4-Ixe">
                                 <rect key="frame" x="150" y="135" width="80" height="15"/>
                                 <animations/>
                                 <constraints>
@@ -123,7 +123,7 @@
                     <navigationItem key="navigationItem" title="New Meal" id="67q-4J-LCv">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VSU-u6-Qdc">
                             <connections>
-                                <action selector="cancel:" destination="BYZ-38-t0r" id="uNX-xp-aCK"/>
+                                <segue destination="Unw-gt-TEx" kind="unwind" unwindAction="unwindToMealList:" id="1zD-5B-hCf"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="AT1-O3-6Wt">
@@ -153,7 +153,7 @@
             <objects>
                 <tableViewController id="zVl-AW-z7l" customClass="MealTableViewController" customModule="MyTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="IHH-Tv-OqL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -162,7 +162,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.74934784970000001" green="0.75986761479999998" blue="0.79030854939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="MealTableViewCell" rowHeight="60" id="JWw-VN-Hag" customClass="MealTableViewCell" customModule="MyTreat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JWw-VN-Hag" id="5IH-Q9-Kz8">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="60"/>
@@ -222,7 +222,7 @@
                     <navigationItem key="navigationItem" title="Meals" id="9NW-7s-lsf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CTH-Vz-Gon">
                             <connections>
-                                <segue destination="rKa-Jh-Ld6" kind="presentation" id="hDD-zl-Pnu"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="FxS-YW-NoM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -239,16 +239,61 @@
                         <viewControllerLayoutGuide type="top" id="WGg-Zt-IW7"/>
                         <viewControllerLayoutGuide type="bottom" id="Aiu-5c-9mz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GXi-7Y-7jd" customClass="HorizontalBarChartView" customModule="Charts">
+                    <view key="view" contentMode="scaleToFill" id="GXi-7Y-7jd">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Paid:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxO-Eo-oxj">
+                                <rect key="frame" x="20" y="8" width="80" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpG-Wp-gWR">
+                                <rect key="frame" x="20" y="194" width="96" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-Hi-Vgf" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="36" width="560" height="150"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="T6J-lN-aSE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-Br-pIm" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="223" width="560" height="225"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="5ZL-lT-c9s"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Onl-Br-pIm" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="Fax-G3-zag"/>
+                            <constraint firstItem="zpG-Wp-gWR" firstAttribute="top" secondItem="pSE-Hi-Vgf" secondAttribute="bottom" constant="8" id="MfY-vb-CJs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Onl-Br-pIm" secondAttribute="trailing" id="PRa-0K-fN1"/>
+                            <constraint firstItem="pSE-Hi-Vgf" firstAttribute="trailing" secondItem="GXi-7Y-7jd" secondAttribute="trailingMargin" id="QRe-uk-iJN"/>
+                            <constraint firstItem="zpG-Wp-gWR" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="bQV-jD-OCK"/>
+                            <constraint firstItem="AxO-Eo-oxj" firstAttribute="top" secondItem="WGg-Zt-IW7" secondAttribute="bottom" constant="8" id="cHF-cm-fBk"/>
+                            <constraint firstItem="pSE-Hi-Vgf" firstAttribute="top" secondItem="AxO-Eo-oxj" secondAttribute="bottom" constant="8" id="gwU-ty-Rl1"/>
+                            <constraint firstItem="AxO-Eo-oxj" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="hIj-5M-3ef"/>
+                            <constraint firstItem="pSE-Hi-Vgf" firstAttribute="leading" secondItem="GXi-7Y-7jd" secondAttribute="leadingMargin" id="ueF-lH-BPY"/>
+                            <constraint firstItem="Onl-Br-pIm" firstAttribute="top" secondItem="zpG-Wp-gWR" secondAttribute="bottom" constant="8" id="xvW-sh-2WV"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Statistics" id="tkw-BR-Wo2"/>
                     <connections>
-                        <outlet property="barChartView" destination="GXi-7Y-7jd" id="R4e-DR-2I8"/>
+                        <outlet property="barChartView" destination="pSE-Hi-Vgf" id="WmZ-FN-cX7"/>
+                        <outlet property="pieChartView" destination="Onl-Br-pIm" id="LPM-ek-DWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h07-5a-M4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,11 +304,16 @@
         <scene sceneID="JbA-RQ-tln">
             <objects>
                 <tabBarController id="U0b-6n-sDI" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="DLm-T3-pZY">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="DLm-T3-pZY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="tintColor" red="0.62352941179999999" green="0.43921568630000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.5490196078431373" green="0.3411764705882353" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Bzx-mN-ioR" kind="relationship" relationship="viewControllers" id="J44-sK-BVm"/>
@@ -280,7 +330,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bzx-mN-ioR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meals" image="Cutlery-30.png" selectedImage="Cutlery Filled-30.png" id="GZe-U0-Cxf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pWq-Y6-pnB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pWq-Y6-pnB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -299,37 +349,13 @@
             </objects>
             <point key="canvasLocation" x="-338" y="-604"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="BLP-hr-V6s">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rKa-Jh-Ld6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wj5-yM-xou">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.62352941179999999" green="0.43921568630000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ezc-W0-Oba"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5a1-6q-rbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1156" y="-931"/>
-        </scene>
         <!--Statistics-->
         <scene sceneID="SXt-Mf-GtP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGR-0h-WKY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Statistics" image="Bar Chart-30.png" selectedImage="Bar Chart Filled-30.png" id="59Y-9a-LFe"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yne-6l-Cwt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Yne-6l-Cwt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>

@@ -138,17 +138,17 @@ class MealViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Navigation
-    
-    @IBAction func cancel(sender: AnyObject) {
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
-        
-        if isPresentingInAddMealMode {
-            dismissViewControllerAnimated(true, completion: nil)
-        }else {
-            navigationController!.popViewControllerAnimated(true)
-        }
-    }
-    
+//    
+//    @IBAction func cancel(sender: AnyObject) {
+//        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+//        
+//        if isPresentingInAddMealMode {
+//            dismissViewControllerAnimated(true, completion: nil)
+//        }else {
+//            navigationController!.popViewControllerAnimated(true)
+//        }
+//    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if buttonSave === sender{
             let restaurantName = textFieldRestaurantName.text ?? ""

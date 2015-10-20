@@ -24,10 +24,6 @@ class MealTableViewController: UITableViewController {
         
         //Style the navigation bar
         navigationItem.leftBarButtonItem = editButtonItem()
-//        UINavigationBar.appearance().tintColor = UIColor(red: 159, green: 112, blue: 192, alpha: 1)
-//        navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-//        navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-        
         
         loadMeals()
     }
@@ -41,7 +37,7 @@ class MealTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest(entityName: "Meal")
         
         //Sort by Date
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {
@@ -108,7 +104,7 @@ class MealTableViewController: UITableViewController {
                 
                 let fetchRequest = NSFetchRequest(entityName: "Meal")
                 //Sort by Date
-                let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+                let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
                 fetchRequest.sortDescriptors = [sortDescriptor]
                 
                 do {
@@ -176,7 +172,7 @@ class MealTableViewController: UITableViewController {
             
             let fetchRequest = NSFetchRequest(entityName: "Meal")
             //Sort by Date
-            let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+            let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
             fetchRequest.sortDescriptors = [sortDescriptor]
             
             do {

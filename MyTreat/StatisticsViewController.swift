@@ -16,34 +16,47 @@ class StatisticsViewController: UIViewController {
     var meals = [Meal]()
     
     @IBOutlet var barChartView: HorizontalBarChartView!
+    @IBOutlet weak var pieChartView: PieChartView!
     //@IBOutlet weak var barChartView: BarChartView!
     
     override func viewWillAppear(animated: Bool) {
+    
         loadMeals()
         
-        var dataPoints:[String] = []
-        var values:[Double] = []
+        var barDataPoints:[String] = []
+        var barValues:[Double] = []
+        
+        var pieDataPoints:[String] = []
+        var pieValues:[Double] = []
         
         for meal in meals{
-            if dataPoints.contains(meal.whoPaid){
-                let index = dataPoints.indexOf(meal.whoPaid)
-                values[index!] += meal.amount
+            //Bar Graph Data Points
+            if barDataPoints.contains(meal.whoPaid){
+                let index = barDataPoints.indexOf(meal.whoPaid)
+                barValues[index!] += meal.amount
             }else{
-                dataPoints.append(meal.whoPaid)
-                values.append(meal.amount)
+                barDataPoints.append(meal.whoPaid)
+                barValues.append(meal.amount)
+            }
+            //Pie Graph Data Points
+            if pieDataPoints.contains(meal.restaurantName){
+                let index = pieDataPoints.indexOf(meal.restaurantName)
+                pieValues[index!] += meal.amount
+            }else{
+                pieDataPoints.append(meal.restaurantName)
+                pieValues.append(meal.amount)
             }
         }
-        setChart(dataPoints, values: values, yValueLabel: "Total Paid")
+        //Graph
+        setBarChart(barDataPoints, values: barValues, yValueLabel: "Total Paid")
+        setPieChart(pieDataPoints, values: pieValues)
+        
+        barChartView.notifyDataSetChanged()
+        pieChartView.notifyDataSetChanged()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-//        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        
-        
         
         // Do any additional setup after loading the view.
     }
@@ -52,10 +65,13 @@ class StatisticsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func setChart(dataPoints: [String], values: [Double], yValueLabel: String) {
+
+//MARK: - Charting Functions
+
+    func setBarChart(dataPoints: [String], values: [Double], yValueLabel: String) {
         barChartView.noDataText = "No meals have been entered"
         barChartView.noDataTextDescription = "Enter meals to see statistics"
+        barChartView.descriptionText = ""
         
         var dataEntries: [BarChartDataEntry] = []
         
@@ -65,13 +81,43 @@ class StatisticsViewController: UIViewController {
         }
         
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: yValueLabel)
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Total Paid")
         let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
+        
         barChartView.data = chartData
-        chartDataSet.colors = ChartColorTemplates.colorful()
-        barChartView.animate(xAxisDuration: 0, yAxisDuration: 2.0)
+        
+        chartDataSet.colors = ChartColorTemplates.joyful()
+        barChartView.animate(xAxisDuration: 0, yAxisDuration: 1.0)
+        barChartView.legend.enabled = false
     }
     
+    func setPieChart(dataPoints: [String], values: [Double]) {
+        pieChartView.descriptionText = ""
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Total Spent")
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        pieChartView.data = pieChartData
+        
+        
+        pieChartDataSet.colors = ChartColorTemplates.joyful()
+        pieChartView.legend.position = .RightOfChartCenter
+        pieChartView.legend.font = UIFont(name: "HelveticaNeue", size: 14)!
+        
+        pieChartView.holeAlpha = 0.0
+        pieChartView.holeRadiusPercent = 0.5
+        pieChartView.drawSliceTextEnabled = false
+        
+        pieChartView.animate(xAxisDuration: 1.0)
+    }
+
+//MARK: - Core Data
+
     func loadMeals() {
         meals = [Meal]()
         
@@ -81,7 +127,7 @@ class StatisticsViewController: UIViewController {
         let fetchRequest = NSFetchRequest(entityName: "Meal")
         
         //Sort by Date
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {
