@@ -132,6 +132,7 @@ class StatisticsViewController: UIViewController {
     
     func setLineChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
+        lineChartView.descriptionText = ""
         
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
@@ -139,8 +140,15 @@ class StatisticsViewController: UIViewController {
         }
         
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries)
+        lineChartDataSet.drawCubicEnabled = true
+        lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.lineWidth = 1.8
+
+        
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+
         lineChartView.data = lineChartData
+        
         
         lineChartDataSet.colors = ChartColorTemplates.joyful()
         lineChartView.legend.enabled = false
