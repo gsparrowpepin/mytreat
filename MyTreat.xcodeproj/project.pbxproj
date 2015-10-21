@@ -28,6 +28,7 @@
 		C4769A401BD56FB2006BB6DC /* Bar Chart Filled-30.png in Resources */ = {isa = PBXBuildFile; fileRef = C4769A3C1BD56FB2006BB6DC /* Bar Chart Filled-30.png */; settings = {ASSET_TAGS = (); }; };
 		C4769A4C1BD5791C006BB6DC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4769A491BD578FA006BB6DC /* Charts.framework */; };
 		C4769A4D1BD5791C006BB6DC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4769A491BD578FA006BB6DC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C496FDF61BD7D9AD00CF6379 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496FDF51BD7D9AD00CF6379 /* PopoverViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		C4769A3B1BD56FB2006BB6DC /* Bar Chart-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Chart-30.png"; sourceTree = "<group>"; };
 		C4769A3C1BD56FB2006BB6DC /* Bar Chart Filled-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Chart Filled-30.png"; sourceTree = "<group>"; };
 		C4769A431BD578FA006BB6DC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		C496FDF51BD7D9AD00CF6379 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				C46480331BCE9CB100F2AF33 /* MealViewController.swift */,
 				C46480641BCEA92800F2AF33 /* MealTableViewController.swift */,
 				C42216C11BD57DA50025027A /* StatisticsViewController.swift */,
+				C496FDF51BD7D9AD00CF6379 /* PopoverViewController.swift */,
 				C46480351BCE9CB100F2AF33 /* Main.storyboard */,
 				C464803B1BCE9CB100F2AF33 /* Assets.xcassets */,
 				C46480401BCE9CB100F2AF33 /* Info.plist */,
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C496FDF61BD7D9AD00CF6379 /* PopoverViewController.swift in Sources */,
 				C46480651BCEA92800F2AF33 /* MealTableViewController.swift in Sources */,
 				C46480631BCEA57A00F2AF33 /* MealTableViewCell.swift in Sources */,
 				C46480341BCE9CB100F2AF33 /* MealViewController.swift in Sources */,

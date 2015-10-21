@@ -24,19 +24,21 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
     let lineDataPoints:[String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     var lineValues:[Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
-    var popoverPieDataPoints:[String] = []
-    var popoverPieValues:[Double] = []
-    
     @IBOutlet var barChartView: HorizontalBarChartView!
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var lineChartView: LineChartView!
-    //@IBOutlet weak var barChartView: BarChartView!
-    @IBOutlet var popoverPieChartView: PieChartView!
     
     override func viewWillAppear(animated: Bool) {
     
         loadMeals()
         
+        barDataPoints = []
+        barValues = []
+        
+        pieDataPoints = []
+        pieValues = []
+        
+        lineValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         
         let calendar = NSCalendar.currentCalendar()
         
@@ -178,63 +180,29 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
     
     func showRestaurantSpendingForNamePopover(name: String) {
         
-        //Show Popover
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let popoverViewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("popoverController") as UIViewController
+        self.performSegueWithIdentifier("graphPopover", sender: name)
         
-        popoverViewController.modalPresentationStyle = .Popover
-        popoverViewController.preferredContentSize = CGSizeMake(UIScreen.mainScreen().bounds.height / 2, UIScreen.mainScreen().bounds.height / 2)
-        
-        let presentingRect: CGRect = CGRect(x: self.view.bounds.size.width/2, y: self.view.bounds.size.height - ((self.view.bounds.size.height + 25) - self.view.bounds.size.height/4), width: 1, height: 1)
-        
-        //popoverViewController.popoverPresentationController?.permittedArrowDirections = nil
-        popoverViewController.popoverPresentationController?.delegate = self
-        popoverViewController.popoverPresentationController?.sourceView = self.view
-        popoverViewController.popoverPresentationController?.sourceRect = presentingRect
-        
-        presentViewController(popoverViewController, animated: true, completion: nil)
-        
-        //Load Data
-        
-        for meal in meals {
-            if meal.whoPaid == name{
-                if popoverPieDataPoints.contains(meal.restaurantName){
-                    let index = popoverPieDataPoints.indexOf(meal.restaurantName)
-                    popoverPieValues[index!] += meal.amount
-                }else{
-                    popoverPieDataPoints.append(meal.restaurantName)
-                    popoverPieValues.append(meal.amount)
-                }
-            }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "graphPopover"{
+            (segue.destinationViewController as! PopoverViewController).meals = self.meals
+            (segue.destinationViewController as! PopoverViewController).name = (sender as! String)
+            
+            let popover = segue.destinationViewController as! PopoverViewController
+            popover.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popover.popoverPresentationController!.delegate = self
+            
+            popover.preferredContentSize = CGSizeMake(UIScreen.mainScreen().bounds.height / 2, UIScreen.mainScreen().bounds.height / 2)
+    
+            let presentingRect: CGRect = CGRect(x: self.view.bounds.size.width/2, y: self.view.bounds.size.height - ((self.view.bounds.size.height - 150) - self.view.bounds.size.height/4), width: 1, height: 1)
+    
+            //var test = UIPopoverArrowDirection.Unknown.rawValue
+            popover.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+            popover.popoverPresentationController!.sourceView = self.view
+            popover.popoverPresentationController!.sourceRect = presentingRect
+            
         }
-        
-        //Create Graph
-        popoverPieChartView.notifyDataSetChanged()
-
-        popoverPieChartView.descriptionText = ""
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<popoverPieDataPoints.count {
-            let dataEntry = ChartDataEntry(value: popoverPieValues[i], xIndex: i)
-            dataEntries.append(dataEntry)
-        }
-        
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-        let pieChartData = PieChartData(xVals: popoverPieDataPoints, dataSet: pieChartDataSet)
-        popoverPieChartView.data = pieChartData
-        
-        
-        pieChartDataSet.colors = ChartColorTemplates.joyful()
-        popoverPieChartView.legend.position = .BelowChartLeft
-        popoverPieChartView.legend.wordWrapEnabled = true
-        popoverPieChartView.legend.font = UIFont(name: "HelveticaNeue", size: 14)!
-        
-        popoverPieChartView.holeAlpha = 0.0
-        popoverPieChartView.holeRadiusPercent = 0.5
-        popoverPieChartView.drawSliceTextEnabled = false
-        
-        popoverPieChartView.animate(xAxisDuration: 1.0)
-        
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {

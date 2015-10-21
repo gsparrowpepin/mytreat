@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="998" y="-604"/>
         </scene>
-        <!--Statistics View Controller-->
+        <!--Popover View Controller-->
         <scene sceneID="tca-5d-92M">
             <objects>
-                <viewController storyboardIdentifier="popoverController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifn-ax-AFA" customClass="StatisticsViewController" customModule="MyTreat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popoverController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifn-ax-AFA" customClass="PopoverViewController" customModule="MyTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="30X-be-hkC"/>
                         <viewControllerLayoutGuide type="bottom" id="xqd-SJ-Fdg"/>
@@ -163,7 +163,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="popoverPieChartView" destination="OGf-3O-vME" id="Rb9-Uv-ueZ"/>
+                        <outlet property="pieChartView" destination="OGf-3O-vME" id="R44-EJ-Utr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJN-z3-n9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,6 +360,7 @@
                         <outlet property="barChartView" destination="pSE-Hi-Vgf" id="WmZ-FN-cX7"/>
                         <outlet property="lineChartView" destination="Hhi-qh-ySu" id="IH0-y2-Xwf"/>
                         <outlet property="pieChartView" destination="Onl-Br-pIm" id="LPM-ek-DWn"/>
+                        <segue destination="ifn-ax-AFA" kind="presentation" identifier="graphPopover" id="PEh-cL-FtS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h07-5a-M4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
