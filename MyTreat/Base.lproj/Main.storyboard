@@ -148,6 +148,28 @@
             </objects>
             <point key="canvasLocation" x="998" y="-604"/>
         </scene>
+        <!--Statistics View Controller-->
+        <scene sceneID="tca-5d-92M">
+            <objects>
+                <viewController storyboardIdentifier="popoverController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifn-ax-AFA" customClass="StatisticsViewController" customModule="MyTreat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="30X-be-hkC"/>
+                        <viewControllerLayoutGuide type="bottom" id="xqd-SJ-Fdg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OGf-3O-vME" customClass="PieChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="popoverPieChartView" destination="OGf-3O-vME" id="Rb9-Uv-ueZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJN-z3-n9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="147"/>
+        </scene>
         <!--Meals-->
         <scene sceneID="IkR-Ts-Him">
             <objects>
@@ -165,7 +187,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JWw-VN-Hag" id="5IH-Q9-Kz8">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucu-jx-clM">
@@ -280,7 +302,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhi-qh-ySu" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="20" y="789" width="560" height="288"/>
+                                        <rect key="frame" x="20" y="790" width="560" height="288"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
