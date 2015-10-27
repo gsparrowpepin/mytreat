@@ -52,6 +52,7 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
                 barValues.append(meal.amount)
             }
             //Pie Graph Data Points
+            
             if pieDataPoints.contains(meal.restaurantName){
                 let index = pieDataPoints.indexOf(meal.restaurantName)
                 pieValues[index!] += meal.amount
@@ -128,7 +129,7 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
         pieChartView.data = pieChartData
         
         
-        pieChartDataSet.colors = ChartColorTemplates.joyful()
+        pieChartDataSet.colors = ChartColorTemplates.guillaume()
         pieChartView.legend.position = .BelowChartLeft
         pieChartView.legend.wordWrapEnabled = true
         pieChartView.legend.font = UIFont(name: "HelveticaNeue", size: 14)!
@@ -170,7 +171,6 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         if chartView === barChartView{
-             print("Bar chart \(entry.value) in \(barDataPoints[entry.xIndex])")
             showRestaurantSpendingForNamePopover(barDataPoints[entry.xIndex])
         }
        
