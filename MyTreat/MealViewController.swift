@@ -25,6 +25,9 @@ class MealViewController: UIViewController, UITextFieldDelegate {
     
     var meal:Meal?
     
+    //Variable for restaurant name coming from selection
+    var restaurantName = ""
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class MealViewController: UIViewController, UITextFieldDelegate {
         createBorders()
         
         // Do any additional setup after loading the view, typically from a nib.
-        buttonSave.enabled = false
+        buttonSave.enabled = true
         
         textFieldRestaurantName.delegate = self
         textFieldWhoPaid.delegate = self
@@ -53,7 +56,14 @@ class MealViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
         
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if restaurantName != "" {
+            textFieldRestaurantName.text = restaurantName
+        }
+        
+    }
     func createBorders(){
         //Restaurant Name Bottom Border
         let borderR = CALayer()

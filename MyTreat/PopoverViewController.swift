@@ -75,7 +75,7 @@ class PopoverViewController: UIViewController {
         
         pieChartView.centerText = "\(name)'s Spending"
         
-        pieChartView.holeAlpha = 0.0
+//        pieChartView.cent
         pieChartView.drawSliceTextEnabled = false
         
         pieChartView.animate(xAxisDuration: 1.0)

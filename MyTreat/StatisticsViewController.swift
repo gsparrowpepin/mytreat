@@ -129,12 +129,12 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
         pieChartView.data = pieChartData
         
         
-        pieChartDataSet.colors = ChartColorTemplates.guillaume()
+        pieChartDataSet.colors = ChartColorTemplates.vordiplom()
         pieChartView.legend.position = .BelowChartLeft
         pieChartView.legend.wordWrapEnabled = true
         pieChartView.legend.font = UIFont(name: "HelveticaNeue", size: 14)!
         
-        pieChartView.holeAlpha = 0.0
+//        pieChartView.holeAlpha = 0.0
         pieChartView.holeRadiusPercent = 0.5
         pieChartView.drawSliceTextEnabled = false
         
@@ -150,7 +150,7 @@ class StatisticsViewController: UIViewController, ChartViewDelegate, UIPopoverPr
             dataEntries.append(dataEntry)
         }
         
-        let lineChartDataSet = LineChartDataSet(yVals: dataEntries)
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "")
         lineChartDataSet.drawCubicEnabled = true
         lineChartDataSet.drawCirclesEnabled = false
         lineChartDataSet.lineWidth = 1.8
